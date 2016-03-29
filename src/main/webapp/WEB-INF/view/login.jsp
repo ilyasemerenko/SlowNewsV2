@@ -44,7 +44,7 @@
             <p class="submit"><input class = "simple_btn" type="submit" name="commit" value="Login"></p>
         </form>
         <a class = "enroll_btn" href = "enroll">Registration</a>
-        <a class = "simple_btn" href = "usersList" target = _blank>List of users</a>
+        <a class = "enroll_btn" href = "usersList" target = _blank>List of users</a>
     </div>
 </div>
 </body>
