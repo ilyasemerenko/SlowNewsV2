@@ -16,9 +16,8 @@ public class AccessFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
 
         System.out.println("Got request from " + req.getRemoteAddr()
-                + " and " + req.getContextPath()
-                + " context to servlet path: " + req.getServletPath()
-                + "with method: " + req.getMethod());
+                + ". Path: " + req.getServletPath()
+                + ". Method: " + req.getMethod());
 
         chain.doFilter(request,response);
     }
