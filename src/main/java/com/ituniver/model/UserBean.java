@@ -3,11 +3,19 @@ package com.ituniver.model;
 public class UserBean {
 
     private String name;
+
     private String email;
     private int age;
     private String password;
 
     public UserBean(){}
+
+    public UserBean(String name, String email, int age, String password) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.password = password;
+    }
 
     public String getEmail() {
         return email;

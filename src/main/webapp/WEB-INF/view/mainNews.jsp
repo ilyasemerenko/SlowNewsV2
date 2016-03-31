@@ -9,24 +9,14 @@
 </head>
 <body>
 <div class = "wrapper">
-    <div class = "header">
-        <a name="header"></a>
-        <div class = "header_logo">
-            SLOWNEWS
-        </div>
-        <ul class = "header_menu ">
-            <li class = "menu_item active">
-                <a class = "menu_link" href = "mainNews">NEWS</a>
-            </li>
-            <li class = "menu_item">
-                <a class = "menu_link" href = "archive">ARCHIVE</a>
-            </li>
-            <li class = "menu_item login_item">
-                <a class = "menu_link" href = "login">LOGIN</a>
-            </li>
-        </ul>
-    </div>
+    <a name = "header"></a>
+    <%@ include file="header.jsp" %>
     <div class = "news_content">
+        <c:if test = "${enroll_succesfull == true}">
+            <div class = "success_enroll">
+                <p>You 've successfully registered in the system! Now You can login.</p>
+            </div>
+        </c:if>
     <c:forEach items = "${newsList}" var = "news">
         <h1>${news.header}</h1>
         <img class = "image" src="${news.image}" alt = ${news.header}>

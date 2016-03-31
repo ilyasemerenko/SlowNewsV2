@@ -9,22 +9,8 @@
 </head>
 <body>
 <div class = "wrapper">
-    <div class = "header">
-        <div class = "header_logo">
-            SLOWNEWS
-        </div>
-        <ul class = "header_menu">
-            <li class = "menu_item">
-                <a class = "menu_link" href = "mainNews">NEWS</a>
-            </li>
-            <li class = "menu_item">
-                <a class = "menu_link" href = "archive">ARCHIVE</a>
-            </li>
-            <li class = "menu_item login_item">
-                <a class = "menu_link" href = "login">LOGIN</a>
-            </li>
-        </ul>
-    </div>
+    <a name = "header"></a>
+    <%@ include file="header.jsp" %>
     <div class = "enroll">
         <form method = post>
             <div class = "enroll_form">

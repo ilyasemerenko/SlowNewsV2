@@ -2,15 +2,17 @@ package com.ituniver.model;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.List;
 
 public class EnrollAction {
 
-    private static List<UserBean> users;
+    private static ArrayList<UserBean> users;
 
     static
     {
         users = new ArrayList<UserBean>();
+        users.add(new UserBean("Jack", "jack@mail.com", 16, "jack"));
+        users.add(new UserBean("Lewis", "lewis@mail.com", 24, "lewis"));
+        users.add(new UserBean("Sandra", "sandra@mail.com", 23, "sandra"));
     }
 
     public void doEnroll(HttpServletRequest request){
@@ -26,7 +28,7 @@ public class EnrollAction {
     }
 
 
-    public static List<UserBean> getUsers() {
+    public static ArrayList<UserBean> getUsers() {
         return users;
     }
 }

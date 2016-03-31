@@ -1,5 +1,7 @@
 package com.ituniver.controller;
 
+import com.ituniver.model.LoginAction;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,23 @@ public class LoginServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp");
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        RequestDispatcher dispatcher;
+            if(new LoginAction().doLogin(request)) {
+                dispatcher = getServletContext().getRequestDispatcher("/mainNews");
+            } else {
+                dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp");
+            }
+
         try {
             dispatcher.forward(request,response);
         } catch (ServletException e) {

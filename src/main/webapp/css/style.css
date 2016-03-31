@@ -54,7 +54,7 @@ body {
     background-color: #111;
 }
 
-.active {
+.active > a {
     background-color: #3399ff;
 }
 
@@ -169,4 +169,11 @@ body {
 .success_enroll{
     font-weight: 500;
     color: limegreen;
+}
+
+.greeting {
+    font-size: 18px;
+    float: right;
+    margin-top: 33px;
+    margin-right: 5px;
 }
