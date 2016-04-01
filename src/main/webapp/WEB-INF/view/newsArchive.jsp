@@ -26,7 +26,7 @@
         <div class = "afterwords">
             25 March 2016,BBC
         </div>
-        <a class = "upstairs archive_upstairs" href="#header">to the top</a>
+        <a class = "upstairs" href="#header">to the top</a>
     </div>
 </div>
 </body>

@@ -19,9 +19,11 @@
         <li class = "menu_item${pageContext.request.requestURI eq '/WEB-INF/view/mainNews.jsp' ? ' active' : ''}">
             <a class = "menu_link" href = "mainNews">NEWS</a>
         </li>
-        <li class = "menu_item${pageContext.request.requestURI eq '/WEB-INF/view/newsArchive.jsp' ? ' active' : ''}">
-            <a class = "menu_link" href = "archive">ARCHIVE</a>
-        </li>
+        <c:if test="${sessionScope.userSession != null}">
+            <li class = "menu_item${pageContext.request.requestURI eq '/WEB-INF/view/newsArchive.jsp' ? ' active' : ''}">
+                <a class = "menu_link" href = "archive">ARCHIVE</a>
+            </li>
+        </c:if>
         <li class = "menu_item login_item${pageContext.request.requestURI eq '/WEB-INF/view/login.jsp' ? ' active' : ''}">
             <c:choose>
                 <c:when test="${sessionScope.userSession != null}">

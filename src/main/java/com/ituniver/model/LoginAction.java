@@ -1,6 +1,7 @@
 package com.ituniver.model;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class LoginAction {
@@ -24,14 +25,18 @@ public class LoginAction {
 
         for (UserBean user : users){
             if(user.getName().equals(login)) {
-                return isPasswordCorrect(user, password);
+                try {
+                    return isPasswordCorrect(user, password);
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return false;
     }
 
-    private boolean isPasswordCorrect(UserBean user, String password){
-        return user.getPassword().equals(password);
+    private boolean isPasswordCorrect (UserBean user, String password) throws  NoSuchAlgorithmException {
+            return user.getPassword().equals(new EnrollAction().encryptPassword(password));
     }
 }
 

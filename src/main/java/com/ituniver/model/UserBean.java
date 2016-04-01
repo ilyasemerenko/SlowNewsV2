@@ -1,5 +1,7 @@
 package com.ituniver.model;
 
+import java.util.ArrayList;
+
 public class UserBean {
 
     private String name;
@@ -7,6 +9,7 @@ public class UserBean {
     private String email;
     private int age;
     private String password;
+    private ArrayList<ArrayList> news;
 
     public UserBean(){}
 
@@ -16,6 +19,17 @@ public class UserBean {
         this.age = age;
         this.password = password;
     }
+
+
+
+    public ArrayList<ArrayList> getNews() {
+        return news;
+    }
+
+    public void setNews(ArrayList<ArrayList> news) {
+        this.news = news;
+    }
+
 
     public String getEmail() {
         return email;

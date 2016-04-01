@@ -26,7 +26,9 @@
         <div class = "afterwords">
             ${news.date},${news.source}
         </div>
-        <button class = "toArchive_btn">add to Archive</button>
+        <c:if test="${sessionScope.userSession != null}">
+            <button class = "toArchive_btn">add to Archive</button>
+        </c:if>
         <a class = "upstairs" href="#header">to the top</a>
     </c:forEach>
 </div>

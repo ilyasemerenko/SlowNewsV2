@@ -1,6 +1,8 @@
 package com.ituniver.model;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class EnrollAction {
@@ -21,8 +23,11 @@ public class EnrollAction {
         user.setName(request.getParameter("username"));
         user.setAge(Integer.parseInt(request.getParameter("age")));
         user.setEmail(request.getParameter("email"));
-        user.setPassword(request.getParameter("pwd"));
-
+        try {
+            user.setPassword(encryptPassword(request.getParameter("pwd")));
+        } catch (NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }
         users.add(user);
         request.setAttribute("enroll_succesfull", "true");
     }
@@ -30,5 +35,11 @@ public class EnrollAction {
 
     public static ArrayList<UserBean> getUsers() {
         return users;
+    }
+
+    String encryptPassword (String pwd)throws NoSuchAlgorithmException {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+            messageDigest.update(pwd.getBytes());
+            return new String(messageDigest.digest());
     }
 }
