@@ -2,7 +2,6 @@ package com.ituniver.model;
 
 public class NewsBean {
 
-    private int id;
     private String header;
     private String text;
     private String image;
@@ -11,21 +10,13 @@ public class NewsBean {
 
     public NewsBean(){}
 
-    public NewsBean(int id, String header, String text, String image, String date, String source) {
-        this.id = id;
+    public NewsBean( String header, String text, String image, String date, String source) {
+
         this.header = header;
         this.text = text;
         this.image = image;
         this.date = date;
         this.source = source;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getHeader() {

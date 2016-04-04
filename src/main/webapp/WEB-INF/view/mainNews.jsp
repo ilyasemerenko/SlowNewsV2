@@ -27,7 +27,14 @@
             ${news.date},${news.source}
         </div>
         <c:if test="${sessionScope.userSession != null}">
-            <button class = "toArchive_btn">add to Archive</button>
+            <form method = "post">
+                <input type = "hidden" name = "header" value="${news.header}">
+                <input type = "hidden" name = "image" value="${news.image}">
+                <input type = "hidden" name = "text" value="${news.text}">
+                <input type = "hidden" name = "date" value="${news.date}">
+                <input type = "hidden" name = "source" value="${news.source}">
+                <button class = "toArchive_btn">add to archive</button>
+            </form>
         </c:if>
         <a class = "upstairs" href="#header">to the top</a>
     </c:forEach>
