@@ -1,11 +1,15 @@
 <div class = "header">
     <div class = "header_logo">
-        <div class = "logo_text">SLOWNEWS
+        <div class = "logo_text">
+            <div class = "logo">SLOWNEWS</div>
+            <div class = "weather">
+                ${weather}
+            </div>
             <div class = "greeting">
                 Hello
                 <c:choose>
                     <c:when test="${sessionScope.userSession != null}">
-                        ${sessionScope.userSession}!
+                        ${sessionScope.userSession.name}!
                     </c:when>
                     <c:otherwise>
                         Guest!

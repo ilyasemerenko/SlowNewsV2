@@ -1,5 +1,7 @@
 package com.ituniver.controller;
 
+import com.ituniver.model.ArchiveAction;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +14,12 @@ import java.io.IOException;
 public class ArchiveSetServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        new ArchiveAction().addToUsersArchive(request);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/view/mainNews.jsp");
+
         try {
             dispatcher.forward(request,response);
         } catch (ServletException e) {

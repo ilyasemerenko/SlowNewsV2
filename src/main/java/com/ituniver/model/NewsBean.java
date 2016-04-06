@@ -1,11 +1,20 @@
 package com.ituniver.model;
 
+import javax.xml.bind.annotation.*;
+
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class NewsBean {
 
+    @XmlElement(name="title")
     private String header;
+    @XmlElement(name="description")
     private String text;
+    @XmlElement(name="image")
     private String image;
+    @XmlElement(name="pubDate")
     private String date;
+    @XmlElement(name="copyright")
     private String source;
 
     public NewsBean(){}

@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class UserBean {
 
     private String name;
-
     private String email;
     private int age;
     private String password;
-    private ArrayList<ArrayList> news;
+    private ArrayList<NewsBean> news;
 
-    public UserBean(){}
+    public UserBean(){
+        news = new ArrayList<NewsBean>();
+    }
 
     public UserBean(String name, String email, int age, String password) {
         this.name = name;
@@ -22,11 +23,11 @@ public class UserBean {
 
 
 
-    public ArrayList<ArrayList> getNews() {
+    public ArrayList<NewsBean> getNews() {
         return news;
     }
 
-    public void setNews(ArrayList<ArrayList> news) {
+    public void setNews(ArrayList<NewsBean> news) {
         this.news = news;
     }
 

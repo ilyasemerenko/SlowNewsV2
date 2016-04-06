@@ -27,12 +27,13 @@
             ${news.date},${news.source}
         </div>
         <c:if test="${sessionScope.userSession != null}">
-            <form method = "post">
+            <form action = "/addToArchive" method = "post">
                 <input type = "hidden" name = "header" value="${news.header}">
                 <input type = "hidden" name = "image" value="${news.image}">
                 <input type = "hidden" name = "text" value="${news.text}">
                 <input type = "hidden" name = "date" value="${news.date}">
                 <input type = "hidden" name = "source" value="${news.source}">
+                <input type = "hidden" name = "user" value="${sessionScope.userSession}">
                 <button class = "toArchive_btn">add to archive</button>
             </form>
         </c:if>

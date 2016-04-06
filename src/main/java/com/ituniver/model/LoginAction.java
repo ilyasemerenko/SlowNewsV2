@@ -11,7 +11,6 @@ public class LoginAction {
         String login = request.getParameter("login");
 
         if(isUserPresent(request)){
-            request.getSession().setAttribute("userSession", login);
             toLogin = true;
         }
         return toLogin;
@@ -26,7 +25,7 @@ public class LoginAction {
         for (UserBean user : users){
             if(user.getName().equals(login)) {
                 try {
-                    return isPasswordCorrect(user, password);
+                    return isPasswordCorrect(user, password,request);
                 } catch (NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
@@ -35,8 +34,12 @@ public class LoginAction {
         return false;
     }
 
-    private boolean isPasswordCorrect (UserBean user, String password) throws  NoSuchAlgorithmException {
-            return user.getPassword().equals(new EnrollAction().encryptPassword(password));
+    private boolean isPasswordCorrect (UserBean user, String password, HttpServletRequest request) throws  NoSuchAlgorithmException {
+        boolean correct = user.getPassword().equals(new EnrollAction().encryptPassword(password));
+        if (correct){
+            request.getSession().setAttribute("userSession", user);
+        }
+        return correct;
     }
 }
 
