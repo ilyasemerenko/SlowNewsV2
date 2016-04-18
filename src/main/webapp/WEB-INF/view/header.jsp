@@ -1,12 +1,12 @@
+
+
 <div class = "header">
     <div class = "header_logo">
         <div class = "logo_text">
-            <div class = "logo">SLOWNEWS</div>
-            <div class = "weather">
-                ${weather}
-            </div>
+            <div class = "logo">SLOWNEWS </div>
+            <div id = "weather" class = "weather"></div>
             <div class = "greeting">
-                Hello
+                for
                 <c:choose>
                     <c:when test="${sessionScope.userSession != null}">
                         ${sessionScope.userSession.name}!
@@ -31,7 +31,7 @@
         <li class = "menu_item login_item${pageContext.request.requestURI eq '/WEB-INF/view/login.jsp' ? ' active' : ''}">
             <c:choose>
                 <c:when test="${sessionScope.userSession != null}">
-                    <a class = "menu_link" href = "logout">LOGOUT</a>
+                    <a class = "menu_link" id = "logout_btn" href = "logout">LOGOUT</a>
                 </c:when>
                 <c:otherwise>
                     <a class = "menu_link" href = "login">LOGIN</a>
@@ -40,3 +40,6 @@
         </li>
     </ul>
 </div>
+<script>
+    getWeather();
+</script>

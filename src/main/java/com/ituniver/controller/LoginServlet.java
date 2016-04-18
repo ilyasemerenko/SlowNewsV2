@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/login")
+@WebServlet("/serv/login")
 public class LoginServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet{
 
         RequestDispatcher dispatcher;
             if(new LoginAction().doLogin(request)) {
-                dispatcher = getServletContext().getRequestDispatcher("/mainNews");
+                dispatcher = getServletContext().getRequestDispatcher("/serv/mainNews");
             } else {
                 dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp");
             }

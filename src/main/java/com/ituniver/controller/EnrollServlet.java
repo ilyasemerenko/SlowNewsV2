@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/enroll")
+@WebServlet("/serv/enroll")
 public class EnrollServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -29,7 +29,7 @@ public class EnrollServlet extends HttpServlet{
         EnrollAction enroll = new EnrollAction();
         enroll.doEnroll(request);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/mainNews");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/serv/mainNews");
         try {
             dispatcher.forward(request,response);
         } catch (ServletException e) {

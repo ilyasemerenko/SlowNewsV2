@@ -1,5 +1,6 @@
 package com.ituniver.controller;
 
+import com.ituniver.dao.UserDAO;
 import com.ituniver.model.EnrollAction;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/usersList")
+@WebServlet("/serv/usersList")
 public class ShowUsersListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setAttribute("users", EnrollAction.getUsers());
+        UserDAO userDAO = new UserDAO();
+        request.setAttribute("users", userDAO.getAllUsers());
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/view/usersList.jsp");
         try {

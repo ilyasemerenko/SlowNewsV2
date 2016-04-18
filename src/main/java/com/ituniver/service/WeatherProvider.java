@@ -33,6 +33,6 @@ public class WeatherProvider {
         } catch(ParseException pe){
             System.out.println("position: " + pe.getPosition());
         }
-        return new String("Weather: " + weatherList.get(0) + ", t=" + weatherList.get(1) + "\\u00b0" + "C");
+        return new String("Weather: " + weatherList.get(0) + ", t=" + weatherList.get(1) + "C");
     }
 }

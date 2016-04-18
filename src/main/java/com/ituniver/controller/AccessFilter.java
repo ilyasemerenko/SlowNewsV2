@@ -12,7 +12,7 @@ public class AccessFilter implements Filter {
     private String weather;
 
     public void init(FilterConfig filterConfig) throws ServletException {
-        weather = new WeatherProvider().getWeather();
+        //weather = new WeatherProvider().getWeather();
 
     }
 

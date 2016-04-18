@@ -1,8 +1,11 @@
 package com.ituniver.model;
 
+import com.ituniver.dao.UserDAO;
+
 import javax.servlet.http.HttpServletRequest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LoginAction {
 
@@ -19,8 +22,9 @@ public class LoginAction {
     private boolean isUserPresent(HttpServletRequest request){
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        UserDAO userDAO = new UserDAO();
 
-        ArrayList<UserBean> users= EnrollAction.getUsers();
+        List<UserBean> users= userDAO.getAllUsers();
 
         for (UserBean user : users){
             if(user.getName().equals(login)) {

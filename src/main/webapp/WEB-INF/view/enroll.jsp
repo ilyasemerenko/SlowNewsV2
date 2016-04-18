@@ -19,7 +19,7 @@
                 <p class = "text_input">Email : <input type="email" name="email" placeholder="name@email.com"/></p>
                 <p class = "text_input">Password : <input type="password" name="pwd" placeholder="Password"/></p>
 
-                <input class = "simple_btn" type="submit" value="Submit" />
+                <input class = "simple_btn" id = "submit_enroll" type="submit" value="Submit" />
             </div>
         </form>
     </div>

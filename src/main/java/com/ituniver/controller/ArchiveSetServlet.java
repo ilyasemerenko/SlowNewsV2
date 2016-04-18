@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/addToArchive")
+@WebServlet("/serv/addToArchive")
 public class ArchiveSetServlet extends HttpServlet {
 
     @Override

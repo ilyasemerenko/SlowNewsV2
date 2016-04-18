@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/logout")
+@WebServlet("/serv/logout")
 public class LogoutServlet extends HttpServlet{
 
     @Override
@@ -16,7 +16,7 @@ public class LogoutServlet extends HttpServlet{
 
         request.getSession().removeAttribute("userSession");
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/mainNews");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/serv/mainNews");
         try {
             dispatcher.forward(request,response);
         } catch (ServletException e) {

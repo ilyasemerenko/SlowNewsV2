@@ -22,6 +22,7 @@ body {
     color: white;
     background: #404040;
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 .header_menu {
@@ -168,12 +169,13 @@ body {
 }
 
 .greeting {
-    font-size: 18px;
-    float: right;
-    margin-top: 33px;
-    margin-right: 5px;
+
 }
 .weather {
     font-size: 16px;
+    float: right;
+}
 
+.logo {
+    float: left;
 }
